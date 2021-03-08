@@ -80,15 +80,15 @@ string infixToPostfix(string expr)
 double evaluateVal(double a,double b,char op)
 {
     if(op=='+')
-        return a+b;
+        return b+a;
     else if(op=='-')
-        return a-b;
+        return b-a;
     else if(op=='*')
-        return a*b;
+        return b*a;
     else if(op=='/')
-        return a/b;
+        return b/a;
     else if(op=='^')
-        return pow(a,b);
+        return pow(b,a);
 }
 
 double evaluate(string expr)
