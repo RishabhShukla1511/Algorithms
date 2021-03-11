@@ -62,7 +62,7 @@ int main()
     root2->right->right=new Node(5);
     
     if(allLevelAnagrams(root1,root2))
-        cout << "All levels are anagrams\n";
+        cout << "All levels of both trees are anagrams\n";
     else
-        cout << "All levels are not anagrams\n";
+        cout << "All levels of both trees are not anagrams\n";
 }

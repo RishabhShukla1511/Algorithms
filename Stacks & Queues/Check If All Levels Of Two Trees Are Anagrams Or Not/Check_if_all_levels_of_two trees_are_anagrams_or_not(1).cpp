@@ -71,7 +71,7 @@ int main()
     levelOrder(root2,v2);
     
     if(checkAllLevelAnagrams(v1,v2))
-        cout << "All levels are anagrams\n";
+        cout << "All levels of both trees are anagrams\n";
     else
-        cout << "All levels are not anagrams\n";
+        cout << "All levels of both trees are not anagrams\n";
 }
