@@ -30,7 +30,8 @@ public:
         int sum=0;
         while(!pq.empty())
         {
-            sum+=(pq.top()*pq.top());
+            int val=pq.top();
+            sum+=(val*val);
             pq.pop();
         }
         return sum;
