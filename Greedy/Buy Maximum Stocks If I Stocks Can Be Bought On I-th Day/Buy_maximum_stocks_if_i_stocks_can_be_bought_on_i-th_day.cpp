@@ -36,5 +36,5 @@ int main()
     cout << "Enter the prices of stack in " << n << " days\n";
     for(int i=0;i<n;i++)
         cin >> arr[i];
-    cout << "Maximum stocks possible " << maxstocks(arr,n,k) << '\n';
+    cout << "Maximum stocks possible - " << maxstocks(arr,n,k) << '\n';
 }
