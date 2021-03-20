@@ -27,6 +27,7 @@ int NoOfConnectedComponents(vector<int>v[],int i,int noofvertices)
 
 int main()
 {
+    cout << "Undirected graph\n";
     int noofedges,noofvertices;
     cout << "Enter the number of vertices in graph\n";
     cin >> noofvertices;
