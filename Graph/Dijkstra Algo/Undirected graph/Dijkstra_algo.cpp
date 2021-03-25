@@ -75,7 +75,12 @@ int main()
         cout << "Enter the source vertex\n";
         int s;
         cin >> s;
-        vector<int>dist=dijkstraShortestPath(s,graph,V);
-        print(dist,s);
+        if(s<0 || s>=V)
+            cout << "Invalid entry\n";
+        else
+        {
+            vector<int>dist=dijkstraShortestPath(s,graph,V);
+            print(dist,s);
+        }
     }
 }
