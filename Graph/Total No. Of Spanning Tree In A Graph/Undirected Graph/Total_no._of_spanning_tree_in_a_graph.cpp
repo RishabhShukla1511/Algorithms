@@ -124,7 +124,7 @@ int input()
 
 int main()
 {
-    cout << "Total number of spanning tree in a Connected Undirected with self loop graph using Matrix Tree Algorithm/Kirchoff's Theorem\n";
+    cout << "Total number of spanning tree in a Connected Undirected without self loop graph using Matrix Tree Algorithm/Kirchoff's Theorem\n";
     int totalspantree=input();
     if(totalspantree!=-1)
         cout << "Total number of Spanning Tree possible in given graph are " << totalspantree;
