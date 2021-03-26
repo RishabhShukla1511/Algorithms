@@ -58,6 +58,7 @@ bool cmp(Edge *edge1,Edge *edge2)
 
 int main()
 {
+    cout << "Kruskal's Algorithm Implementation\n";
     int V;
     cout << "Enter the number of vertices\n";
     cin >> V;
