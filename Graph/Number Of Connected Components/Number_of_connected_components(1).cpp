@@ -45,7 +45,7 @@ int numConnectedComp(vector<pair<int,int>>v,int n)
 
 int main()
 {
-    cout << "Undirected graph\n";
+    cout << "Number of connected components in Undirected graph\n";
     int V,E;
     cout << "Enter the number of vertices\n";
     cin >> V;
