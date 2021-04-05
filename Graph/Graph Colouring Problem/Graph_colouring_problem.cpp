@@ -41,9 +41,9 @@ int main()
 {
     cout << "Graph Coloring Problem - Greedy Approach - Upper bound on the number of colors required to color graph - Less than number of vertices\n";
     int V,E;
-    cout << "Enter the number of vertices\n";
+    cout << "Enter the total number of vertices\n";
     cin >> V;
-    cout << "Enter the number of edges\n";
+    cout << "Enter the total number of edges\n";
     cin >> E;
     cout << "Enter the edges\nVertices are laballed from 0\n";
     vector<int>graph[V];
