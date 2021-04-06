@@ -1,0 +1,91 @@
+#include<bits/stdc++.h>
+#define INF INT_MAX
+using namespace std;
+
+void addEdge(vector<pair<int,int>>graph[],int u,int v,int w)
+{
+    graph[u].push_back({v,w});
+}
+
+vector<int> dijkstraShortestPath(int ver,vector<pair<int,int>>graph[],int n)
+{
+    vector<int>dist(n,INF);
+    vector<bool>selected(n,false);
+    priority_queue<pair<int,int>,vector<pair<int,int>>,greater<pair<int,int>>>pq;
+    pq.push({0,ver});
+    dist[ver]=0;
+    while(!pq.empty())
+    {
+        ver=pq.top().second;
+        pq.pop();
+        if(selected[ver])
+            continue;
+        selected[ver]=true;
+        for(int i=0;i<graph[ver].size();i++)
+        {
+            int v=graph[ver][i].first,w=graph[ver][i].second;
+            if(!selected[v] && dist[ver]+w<dist[v])
+            {
+                dist[v]=dist[ver]+w;
+                pq.push({dist[v],v});
+            }
+        }
+    }
+    return dist;
+}
+
+void print(vector<int>dist,int s)
+{
+    int n=dist.size();
+    cout << "Shortest distance from " << s << " to all other vertices\n";
+    cout << "Source\tDestination\tShortestsDistance\n";
+    for(int i=0;i<n;i++)
+        cout << s << "\t" << i << "\t\t" << dist[i] << "\n";
+    cout << '\n';
+}
+
+int main()
+{
+    int V,E;
+    cout << "Enter the number of vertices\n";
+    cin >> V;
+    cout << "Enter the number of edges\n";
+    cin >> E;
+    vector<pair<int,int>>graph[V];
+    cout << "Enter the edges\nVertices are in [0," << V-1 << "] range\n\n";
+    int k=0;
+    for(int i=1;i<=E;i++)
+    {
+        cout << "Enter the starting and ending vertex " << i << " edge\n";
+        int u,v;
+        cin >> u >> v;
+        if(u<0 || u>=V || v<0 || v>=V)
+        {
+            cout << "Invalid entry\n";
+            return 0;
+        }
+        addEdge(graph,u,v,0);
+        addEdge(graph,v,u,1);
+    }
+    cout << "Enter the source vertex\n";
+    int s;
+    cin >> s;
+    if(s<0 || s>=V)
+    {
+        cout << "Invalid entry\n";
+        return 0;
+    }
+    cout << "Enter the destination vertex\n";
+    int d;
+    cin >> d;
+    if(d<0 || d>=V)
+    {
+        cout << "Invalid entry\n";
+        return 0;
+    }
+    vector<int>dist=dijkstraShortestPath(s,graph,V);
+    if(dist[d]==INF)
+        cout << "Impossible to reach " << d << " from " << s;
+    else
+        cout << "Minimum edges to reverse to reach " << d << " from " << s << ": " << dist[d];
+}
