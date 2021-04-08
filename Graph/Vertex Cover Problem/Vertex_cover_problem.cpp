@@ -27,6 +27,7 @@ void vertexCover(vector<int>graph[],int V)
 
 int main()
 {
+    cout << "Approximate Algorithm for Vertex Cover Problem\n";
     int V,E;
     cout << "Enter the number of vertices - start from 0\n";
     cin >> V;
