@@ -7,13 +7,11 @@ public:
 	void shortest_distance(vector<vector<int>>&matrix){
 	    // Code here
 	    int n=matrix.size();
-	    for(int i=0;i<n;i++)
+	    for(int k=0;k<n;k++)
 	    {
-	        for(int j=0;j<n;j++)
+	        for(int i=0;i<n;i++)
 	        {
-	            if(i==j)
-	                continue;
-	            for(int k=0;k<n;k++)
+	            for(int j=0;j<n;j++)
 	            {
 	                if(matrix[i][k]!=-1 && matrix[k][j]!=-1 && matrix[i][j]>matrix[i][k]+matrix[k][j])
 	                    matrix[i][j]=matrix[i][k]+matrix[k][j];
