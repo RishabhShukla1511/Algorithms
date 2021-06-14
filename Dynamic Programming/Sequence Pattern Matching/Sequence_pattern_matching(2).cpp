@@ -7,12 +7,8 @@ bool Sequence_pattern_match(string str1,string str2)
     while(i<n && j<m)
     {
         if(str1[i]==str2[j])
-        {
             i++;
-            j++;
-        }
-        else
-            j++;
+        j++;
     }
     return i==n;
 }
