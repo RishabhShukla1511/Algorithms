@@ -1,47 +1,47 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 
-string LCS(string str1,string str2)
+string LCS(string str1, string str2)
 {
-    int n=str1.length();
-    int dp[n+1][n+1];
-    memset(dp,0,sizeof(dp));
-    for(int i=1;i<=n;i++)
+    int n = str1.length();
+    int dp[n + 1][n + 1];
+    memset(dp, 0, sizeof(dp));
+    for (int i = 1; i <= n; i++)
     {
-        for(int j=1;j<=n;j++)
+        for (int j = 1; j <= n; j++)
         {
-            if(str1[i-1]==str2[j-1])
-                dp[i][j]=1+dp[i-1][j-1];
+            if (str1[i - 1] == str2[j - 1])
+                dp[i][j] = 1 + dp[i - 1][j - 1];
             else
-                dp[i][j]=max(dp[i-1][j],dp[i][j-1]);
+                dp[i][j] = max(dp[i - 1][j], dp[i][j - 1]);
         }
     }
-    string lps="";
-    int x=n,y=n;
-    while(x>0 && y>0)
+    string lps = "";
+    int x = n, y = n;
+    while (x > 0 && y > 0)
     {
-        if(str1[x-1]==str2[y-1])
+        if (str1[x - 1] == str2[y - 1])
         {
-            lps+=str1[x-1];
+            lps += str1[x - 1];
             x--;
             y--;
         }
         else
         {
-            if(dp[x-1][y]>dp[x][y-1])
+            if (dp[x - 1][y] > dp[x][y - 1])
                 x--;
             else
-                y--;   
-        }        
+                y--;
+        }
     }
     return lps;
 }
 
 string LPS(string str)
 {
-    string org=str;
-    reverse(str.begin(),str.end());
-    return LCS(org,str);
+    string org = str;
+    reverse(str.begin(), str.end());
+    return LCS(org, str);
 }
 
 int main()
